@@ -243,12 +243,13 @@ static void start_application ( void )
 {
 	printf("Starting Application\n");
 
-	void (*app_reset_handler) (void) = (void*) ( *(volatile uint32_t *) (0x08000000 + 4));
+	void (*app_reset_handler) (void) = (void*) ( *(volatile uint32_t *) (0x08040000 + 4));
 
 	// To set stack address manually (for some microcontrollers)
 	// __set_MSP( ( *(volatile uint32_t *) 0x08000000) );
 
 	HAL_GPIO_WritePin( GPIOB, GPIO_PIN_0, GPIO_PIN_RESET );		//Green LED OFF
+	app_reset_handler();
 }
 /* USER CODE END 4 */
 
