@@ -785,7 +785,7 @@ static void start_application ( void )
  80007d6:	4808      	ldr	r0, [pc, #32]	@ (80007f8 <start_application+0x28>)
  80007d8:	f002 fc52 	bl	8003080 <puts>
 
-	void (*app_reset_handler) (void) = (void*) ( *(volatile uint32_t *) (0x08000000 + 4));
+	void (*app_reset_handler) (void) = (void*) ( *(volatile uint32_t *) (0x08040000 + 4));
  80007dc:	4b07      	ldr	r3, [pc, #28]	@ (80007fc <start_application+0x2c>)
  80007de:	681b      	ldr	r3, [r3, #0]
  80007e0:	607b      	str	r3, [r7, #4]
@@ -807,7 +807,7 @@ static void start_application ( void )
  80007f4:	46bd      	mov	sp, r7
  80007f6:	bd80      	pop	{r7, pc}
  80007f8:	08003d80 	.word	0x08003d80
- 80007fc:	08000004 	.word	0x08000004
+ 80007fc:	08040004 	.word	0x08040004
  8000800:	40020400 	.word	0x40020400
 
 08000804 <MPU_Config>:
